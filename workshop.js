@@ -119,7 +119,29 @@ function first(n, theArray) {
 }
 
 function last(n, theArray) {
-
+    if(Array.isArray(n)) {
+        return n[n.length - 1]
+    }
+    else if(n > 0 && n < theArray.length) {
+        var newArray = [];
+        for(var i = theArray.length - n; i < theArray.length; i++) {
+            newArray.push(theArray[i]);
+        }
+        return newArray;
+    }
+    
+    else if(n < 0) {
+        var emptyArray = [];
+        return emptyArray;
+    }
+    
+    else if(n > theArray.length) {
+        return theArray;
+    }
+    
+    else {
+        return theArray[theArray.length - 1];
+    }
 }
 
 function pluck(property, arrayOfObjects) {
