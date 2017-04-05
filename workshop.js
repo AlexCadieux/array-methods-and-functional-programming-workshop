@@ -73,7 +73,22 @@ function indexOf(item, theArray) {
 }
 
 function findIndex(predicate, theArray) {
-
+    if(theArray.length > 0) {
+        for(var i = 0; i< theArray.length; i++) {
+            if(predicate(theArray[i])) {
+                return i;
+                break;
+            }
+            
+            else if(i + 1 == theArray.length && !predicate(theArray[i])) {
+                return -1;
+            }
+        }
+    }
+    
+    else {
+        return -1;
+    }
 }
 
 function first(n, theArray) {
