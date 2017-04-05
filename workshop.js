@@ -167,7 +167,9 @@ function flatten(theArray) {
 }
 
 function negate1(predicate) {
-
+    return function(element) {
+        return !predicate(element);
+    }
 }
 
 function negate2(predicate) {
