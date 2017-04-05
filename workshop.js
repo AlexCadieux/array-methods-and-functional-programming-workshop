@@ -54,7 +54,22 @@ function some(predicate, theArray) {
 }
 
 function indexOf(item, theArray) {
-
+    if(theArray.length > 0) {
+        for(var i = 0; i< theArray.length; i++) {
+            if(theArray[i] === item) {
+                return i;
+                break;
+            }
+            
+            else if(i + 1 == theArray.length && theArray[i] !== item) {
+                return -1;
+            }
+        }
+    }
+    
+    else {
+        return -1;
+    }
 }
 
 function findIndex(predicate, theArray) {
