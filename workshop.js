@@ -151,7 +151,19 @@ function pluck(property, arrayOfObjects) {
 }
 
 function flatten(theArray) {
-
+    var flat = []
+    map(function(element){
+        if(Array.isArray(element)) {
+            flat = flat.concat(flatten(element));
+        }
+        
+        else {
+            flat.push(element);
+        }
+        
+    }, theArray);
+    
+    return flat;
 }
 
 function negate1(predicate) {
