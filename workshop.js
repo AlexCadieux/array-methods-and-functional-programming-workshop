@@ -173,7 +173,9 @@ function negate1(predicate) {
 }
 
 function negate2(predicate) {
-
+    return function(){
+        return !predicate.apply(this, arguments);
+    } 
 }
 
 function compose1(fun1, fun2) {
