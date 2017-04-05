@@ -1,5 +1,9 @@
 function forEach(callback, theArray) {
-
+    if(theArray.length > 0) {
+        for (var i = 0; i < theArray.length; i++) {
+            callback(theArray[i]);
+        }
+    }
 }
 
 function map(mappingFunction, theArray) {
