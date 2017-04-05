@@ -145,7 +145,9 @@ function last(n, theArray) {
 }
 
 function pluck(property, arrayOfObjects) {
-
+    return map(function(element){
+        return element[property];
+    }, arrayOfObjects);
 }
 
 function flatten(theArray) {
