@@ -27,8 +27,8 @@ function filter(predicate, theArray) {
 function every(predicate, theArray) {
     
     for (var i = 0; i < theArray.length; i++) {
-        if(predicate(theArray[i])) {
-            return true;
+        if(!predicate(theArray[i])) {
+            return false;
             break;
         }
     }
@@ -92,7 +92,30 @@ function findIndex(predicate, theArray) {
 }
 
 function first(n, theArray) {
-
+    if(Array.isArray(n)) {
+        return n[0]
+    }
+    else if(n > 0 && n < theArray.length) {
+        var newArray = [];
+        for(var i = 0; i < n; i++) {
+            newArray.push(theArray[i]);
+        }
+        return newArray;
+    }
+    
+    else if(n < 0) {
+        var emptyArray = [];
+        return emptyArray;
+    }
+    
+    else if(n > theArray.length) {
+        return theArray;
+    }
+    
+    else {
+        return theArray[0];
+    }
+    
 }
 
 function last(n, theArray) {
