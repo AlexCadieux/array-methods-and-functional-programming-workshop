@@ -25,11 +25,32 @@ function filter(predicate, theArray) {
 }
 
 function every(predicate, theArray) {
-
+    
+    for (var i = 0; i < theArray.length; i++) {
+        if(predicate(theArray[i])) {
+            return true;
+            break;
+        }
+    }
+    return true;
 }
 
 function some(predicate, theArray) {
-
+    if(theArray.length > 0)
+        for (var i = 0; i < theArray.length; i++) {
+            if(predicate(theArray[i])) {
+                return true;
+                break;
+            }
+            
+            else {
+                return false
+            }
+    }
+    
+    else {
+        return false
+    }
 }
 
 function indexOf(item, theArray) {
