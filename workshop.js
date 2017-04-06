@@ -187,7 +187,7 @@ function compose1(fun1, fun2) {
 function compose2(arrOfFuncs) {
     return function(x) {
         var y = x;
-        for (var i = arrOfFuncs.length-1, l = 0; i >= l; i--) {
+        for (var i = arrOfFuncs.length-1; i >= 0; i--) {
             y = arrOfFuncs[i](y);
         }
         return y;
