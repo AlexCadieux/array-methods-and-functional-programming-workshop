@@ -179,11 +179,27 @@ function negate2(predicate) {
 }
 
 function compose1(fun1, fun2) {
-
+    return function(x) {
+        return fun1(fun2(x))
+    }
 }
 
 function compose2(arrOfFuncs) {
-
+    return function(x) {
+        var y = x;
+        for (var i = arrOfFuncs.length-1, l = 0; i >= l; i--) {
+            y = arrOfFuncs[i](y);
+        }
+        return y;
+    }
+    
+    // return function(arg) {
+    //     var temp = arg;
+    //     for (var i = arrOfFuncs.length-1, l = 0; i >= l; i--) {
+    //       temp = arrOfFuncs[i](temp);
+    //     }
+    //     return temp;
+    // }
 }
 
 /***** DO NOT EDIT AFTER THIS LINE *****/
